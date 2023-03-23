@@ -1,0 +1,11 @@
+Faire le repository sur son Git
+Console : 
+o	symfony new reviews-symfony –webapp 
+o	se déplacer dans le dossier qu’on vient de créer : cd reviews-symfony
+o	git remote add origin (copier/coller l'adresse du git)
+o	git branch -M main
+o	git push -u origin main
+
+Creer son fichier ReadMe
+1er commit
+Lancer le "symfony serve"
