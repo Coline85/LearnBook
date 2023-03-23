@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil - {{ parent() }}{% endblock %}
+
+{% block body %}
+    <div class="container my-24 px-6 mx-auto">
+        <section class="mb-32 text-gray-800 text-center">
+            <h2 class="text-3xl font-bold mb-12">The New Social Network <u class="text-blue-600"> LearnBook</u></h2>
+            <div class="flex gap-4 justify-around p-8 bg-black text-white mt-6 mb-6">
+                <a href="{{ path('app_home') }}">Accueil</a>
+                {# <a href="{{ path('app_') }}">Membres</a> #}
+                {% if app.user %}
+                    <span>{{ app.user.name }}</span>
+                    <a href="{{ path('app_logout') }}">Déconnexion</a>
+                {% else %}
+                    <a href="#">Connexion</a>
+                    <a href="#">Inscription</a>
+                {% endif %}
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-x-6 lg:gap-xl-12">
+                <div class="mb-12 lg:mb-0">
+                    <img class="rounded-lg shadow-lg mb-6 mx-auto" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(9).jpg" alt="avatar" style="width: 150px" />
+                    <h5 class="text-lg font-bold mb-4">Alain Turgot</h5>
+                    <p class="mb-6">Frontend Developer</p>
+                </div>
+                
+                <div class="mb-12 lg:mb-0">
+                    <img class="rounded-lg shadow-lg mb-6 mx-auto" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(4).jpg" alt="avatar" style="width: 150px" />
+                    <h5 class="text-lg font-bold mb-4">Veronique Dupond</h5>
+                    <p class="mb-6">Backend Developer</p>
+                </div>
+
+                <div class="mb-12 md:mb-0">
+                    <img class="rounded-lg shadow-lg mb-6 mx-auto" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(32).jpg" alt="avatar" style="width: 150px" />
+                        <h5 class="text-lg font-bold mb-4">Thomas Jirwel</h5>
+                        <p class="mb-6">Digital Marketing Analyst</p>
+                </div>
+
+                <div class="mb-12 md:mb-0">
+                    <img class="rounded-lg shadow-lg mb-6 mx-auto" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(31).jpg" alt="avatar" style="width: 150px" />
+                    <h5 class="text-lg font-bold mb-4">Emma Lovelace</h5>
+                    <p class="mb-6">Web Designer</p>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}
