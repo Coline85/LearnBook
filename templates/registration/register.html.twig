@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <div class="max-w-2xl mx-auto border my-4 py-10 px-20">
+        <h1 class="text-center text-3xl mb-6">Register</h1>
+    <div>
+    <div <div class="flex justify-center gap-4 items-center space-x-4">
+        {{ form_start(registrationForm) }}
+
+        <div class="space-y-2">
+            {{ form_row(registrationForm.email) }}
+            {{ form_row(registrationForm.plainPassword, { label: 'Password'}) }}
+        
+        <button  <button class="bg-slate-500 text-white py-2 px-3 hover:bg-slate-400 rounded-lg block w-full mt-10" formnovalidate>Register</button>
+
+        {{ form_end(registrationForm) }}
+        
+        {{ form_end(registrationForm.agreeTerms) }}
+    </div>
+{% endblock %}

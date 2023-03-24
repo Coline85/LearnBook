@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    {% block header %}
+    <div class="container my-24 px-6 mx-auto">
+        <section class="mb-32 text-gray-800 text-center">
+            <h2 class="text-3xl font-bold mb-12">The New Social Network <u class="text-blue-600"> LearnBook</u></h2>
+            <div class="flex gap-4 justify-around p-8 bg-black text-white mt-6 mb-6">
+                <a href="{{ path('app_home') }}">Accueil</a>
+                <a href="#">Membres</a>
+                {% if app.user %}
+                    <span>{{ app.user.name }}</span>
+                    <a href="{{ path('app_logout') }}">Déconnexion</a>
+                {% else %}
+                    <a href="#">Connexion</a>
+                    <a href="{{ path('app_register') }}">Inscription</a>
+                {% endif %}
+            </div>
+    {% endblock %}
+
+    {% block body %}{% endblock %}
+
+    {% block footer %}
+        <div class="">Tous droits réservés - 2023</div>
+    {% endblock %}
+{% block body %}
