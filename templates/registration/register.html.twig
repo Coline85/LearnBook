@@ -1,22 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Inscription{% endblock %}
 
 {% block body %}
-    <div class="max-w-2xl mx-auto border my-4 py-10 px-20">
-        <h1 class="text-center text-3xl mb-6">Register</h1>
-    <div>
-    <div <div class="flex justify-center gap-4 items-center space-x-4">
-        {{ form_start(registrationForm) }}
 
-        <div class="space-y-2">
-            {{ form_row(registrationForm.email) }}
-            {{ form_row(registrationForm.plainPassword, { label: 'Password'}) }}
-        
-        <button  <button class="bg-slate-500 text-white py-2 px-3 hover:bg-slate-400 rounded-lg block w-full mt-10" formnovalidate>Register</button>
+    <form class="w-full">
+        <div class="max-w-2xl mx-auto border my-4 py-10 px-20 rounded bg-white">
+            <h1 class="text-center text-3xl mb-6">Inscription</h1>
+        <div>
 
-        {{ form_end(registrationForm) }}
-        
-        {{ form_end(registrationForm.agreeTerms) }}
-    </div>
+            {{ form_start(registrationForm) }}
+
+        <div  class="text-center space-x-10 mb-6">
+            {{ form_row(registrationForm.email, { label: 'Entrez votre email'}) }}
+        </div>
+      
+        <div class="text-center space-x-10 mb-6">
+            {{ form_row(registrationForm.plainPassword, { label: 'Entrez votre mot de passe'}) }}
+        </div>
+
+        <div class="flex justify-center space-x-4 items-center mb-6">
+            <span class="text-sm">  {{ form_row(registrationForm.agreeTerms) }} </span>
+            <button class="shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">S'inscrire</button>
+        </div>
+    </form>
+
 {% endblock %}
